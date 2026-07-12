@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yes, &...</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="progress" id="progress"></div>
+<div class="slide-num" id="slideNum"></div>
+
+<!-- Help overlay -->
+<div class="help-overlay" id="helpOverlay">
+  <div class="help-content">
+    <h2>Keyboard Shortcuts</h2>
+    <div class="shortcut">
+      <span class="action">Next slide</span>
+      <span><span class="key">→</span> <span class="key">Space</span></span>
+    </div>
+    <div class="shortcut">
+      <span class="action">Previous slide</span>
+      <span class="key">←</span>
+    </div>
+    <div class="shortcut">
+      <span class="action">Presenter mode</span>
+      <span class="key">P</span>
+    </div>
+    <div class="shortcut">
+      <span class="action">Fullscreen</span>
+      <span class="key">F</span>
+    </div>
+    <div class="shortcut">
+      <span class="action">First slide</span>
+      <span class="key">Home</span>
+    </div>
+    <div class="shortcut">
+      <span class="action">Last slide</span>
+      <span class="key">End</span>
+    </div>
+    <div class="shortcut">
+      <span class="action">This help</span>
+      <span class="key">H</span>
+    </div>
+    <div class="help-close">Press any key to close</div>
+  </div>
+</div>
+
+<div class="deck" id="deck">
+  <!-- ════════════════════════════════════════════ -->
+  <!-- SLIDE 1: Title -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="slide slide-title active" data-notes="Welcome everyone to my talk: Yes, and Ruby's secret talent for improvisation.<br>
+    Take a breath, make eye contact, smile.">
+    <div class="title-huge">
+      Yes, &...
+    </div>
+    <div class="subtitle" style="margin-top: 24px;">
+      <span class="pink">Ruby's</span> Secret Talent for <span class="teal"></span>Improvisation</span>
+    </div>
+    <div style="position: absolute; bottom: 48px; right: 60px; text-align: right; z-index: 1;">
+      <div style="font-size: 24px; font-weight: 600; color: var(--text);">Ifat Ribon</div>
+      <div style="font-size: 20px; color: var(--muted); margin-top: 6px;">Blue Ridge Ruby | April 2026</div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- SLIDE 2: Cold Open — setup -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="slide slide-split-spotlight" data-notes="to begin, let's try something together...
+
+  I say a line. You add to it.
+  Only rule: start with 'Yes, and...'
+
+  - I've been at this conference for two hours  and I've already committed to starting my own farm.">
+    <div class="spotlight-pink"></div>
+    <div class="title-large">
+      Let's try something...
+    </div>
+    <!--
+    <div class="subtitle" style="margin-top: 32px; max-width: 600px;">
+      I say a line. You add to it.<br>
+      Only rule: start with <span class="pink">"Yes, and..."</span>
+    </div>
+    -->
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- SLIDE 3: Yes, And... (signature) -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="slide" data-notes="exactly, nailed it on your first try. For some of you, you may have just done your very first improv scene
+  saw the number one rule of improv
+  foundational principle of improv, and of ruby">
+    <div class="spotlight-pink"></div>
+    <div class="yes-and-text">Yes, and...</div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- SLIDE 4: Land the concept -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="slide" data-notes="yes an means that you accept what's given, and add something new.
+  You BUILD on what's given to create something new
+  improv is really about building something out of nothing, much like writing / designing a Ruby app">
+    <div class="spotlight-pink"></div>
+    <div class="title-large" style="max-width: 800px;">
+      Accept what's given...<br>
+      <!-- animate this part in? -->
+      <span class="teal">Add something new.</span>
+    </div>
+    <div class="subtitle" style="margin-top: 24px;">
+      That's improv. That's also Ruby.
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- SLIDE 5: About Me -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="slide no-spotlight" style="background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)), url('second_city.webp') center/cover no-repeat;" data-notes="to introduce myself, my name is Ifat Ribon
+
+  I currently live in Chicago, right down the street from Second City, where I spent years learning and playing improv.
+
+  by day, I am a principal architect at LaunchPad Lab, a small digital product agency headquartered in Chicago.
+
+  among the many roles I play at LaunchPad, I am still very much immersed in writing Ruby code and designing production apps.
+
+  I am excited to share with you all today how I've seen these two worlds come together so well,
+
+  and how Ruby isn't just flexible, it's designed to collaborate">
+    <div class="label">About me</div>
+    <div class="title-huge" style="line-height: 1.4;">
+      <span class="blue">Improv</span> in <span class="teal">Chicago</span><br>
+      <span class="pink">Ruby</span> in <span class="lavender">Production</span>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- SLIDE 6: The Cast -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="slide" data-notes="To that end, let me introduce our scene partners for today.
+
+  We'll be talking about Ruby's functions, Blocks, Procs, and Lambdas and how each of them
+
+  adheres, or in some cases doesn't adhere, to the foundations of improvisation.">
+    <div class="spotlight-pink"></div>
+    <div class="label">Today's scene partners</div>
+    <div class="title-large" style="line-height: 1.6;">
+      <span class="teal">Blocks</span><br>
+      <span class="blue">Procs</span><br>
+      <span class="lavender">Lambdas</span>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- SLIDE 7: Roadmap A -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="slide" data-notes="We'll see how they pass control">
+    <div class="spotlight-pink"></div>
+    <div class="body-text">
+      We'll see how they <span class="teal">pass control</span>,<br>
+      <span class="hidden-line"><span class="blue">accept what's given</span>,</span><br>
+      <span class="hidden-line">and play to the absurd.</span>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- SLIDE 8: Roadmap B -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="slide" data-notes="accept what's given">
+    <div class="spotlight-pink"></div>
+    <div class="body-text">
+      We'll see how they <span class="teal">pass control</span>,<br>
+      <span class="blue">accept what's given</span>,<br>
+      <span class="hidden-line">and play to the absurd.</span>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- SLIDE 9: Roadmap C -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="slide" data-notes="and play to the absurd">
+    <div class="spotlight-pink"></div>
+    <div class="body-text">
+      We'll see how they <span class="teal">pass control</span>,<br>
+      <span class="blue">accept what's given</span>,<br>
+      and play to the <span class="pink">absurd</span>.
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- SLIDE 10: Section — Passing the Mic -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="slide" data-notes="with that, let's continue with the very first thing we did today,
+
+  with Yes, and,
+
+  which was to pass the mic">
+   <div class="spotlight-pink"></div>
+    <div class="section-icon"><svg viewBox="0 0 48 48" fill="none" stroke="var(--teal)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="16" y="4" width="16" height="24" rx="8"/><path d="M10 22a14 14 0 0 0 28 0"/><line x1="24" y1="36" x2="24" y2="44"/><line x1="16" y1="44" x2="32" y2="44"/></svg></div>
+    <div class="title-large">Passing the Mic</div>
+    <div class="subtitle" style="font-size: 42px;">  blocks and <code style="font-family: 'JetBrains Mono', monospace; color: var(--teal);">yield</code></div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- SLIDE 11: Improv rule -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="slide" data-notes="In improv, only one person speaks at a time on stage.
+
+  This is really important because
+  listening is imperative to improv.
+
+  If you can't hear or listen to your partner, you won't be able to add something to what they've given you, and
+
+  we won't be able to yes, and very well.
+
+  So
+  the idea is: when you're on stage, you hold that spotlight, you say your piece, and then you
+  pass focus to your scene partner.
+  ">
+    <div class="spotlight-pink"></div>
+    <div class="rule-banner">
+      <div class="rule-label">Improv Truth</div>
+      <div class="rule-text">One person speaks at a time.</div>
+    </div>
+    <div class="body-text" style="margin-top: 16px;">
+      You hold the stage, then you <span class="teal">pass focus.</span>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- SLIDE 12: Block in action -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="slide" data-notes="I imagine everyone here is likely most familiar with blocks.
+
+  Blocks are anonymous pieces of code that can be passed to methods.
+
+
+  They can be passed to any method at all, and it's up to the method to decide whether to use it and what to do with it.
+  There are a couple ways to pass a block to a method, with the first traditional one here with the `do` and `end` keywords.
+  the encapsulated code here then, is the puts statement, which will be executed when the block is called.
+
+  Methods 'set the scene' Blocks accept the context and continue the action
+
+  other notes: What a block is (syntactically), What a block is not (an object… yet), Why Ruby only allows one implicit block">
+    <div class="spotlight-pink"></div>
+    <div class="label">a block in action</div>
+    <div class="code-panel">
+      <span class="fn">scene</span> <span class="kw">do</span><br>
+      &nbsp;&nbsp;<span class="fn">puts</span> <span class="str">"Sure, I'll just move this button."</span> <br>
+      <span class="kw">end</span><br>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- SLIDE 13: yield — basic -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="slide" data-notes="Blocks are anonymous pieces of code that can be passed to methods.
+
+  They can be passed to any method at all, and it's up to the method to decide whether to use it and what to do with it.
+
+  There are a couple of ways to
+  pass a block to a method — the traditional one here uses the do and end keywords. The
+  encapsulated code — our puts statement — will be executed when the block is called.
+
+  ">
+    <div class="spotlight-pink"></div>
+    <div class="label">yield — passing the mic</div>
+    <div class="code-panel">
+      <span class="kw">def</span> <span class="fn">scene</span><br>
+      &nbsp;&nbsp;<span class="fn">puts</span> <span class="str">"The client wants a small change..."</span><br>
+      &nbsp;&nbsp;<span class="kw">yield</span><br>
+      &nbsp;&nbsp;<span class="fn">puts</span> <span class="str">"That took down staging, prod, AND the Keurig!"</span><br>
+      <span class="kw">end</span>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- SLIDE 14: yield — highlight yield -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="slide" data-notes="So let's see how the scene method is actually written to work with this block. In our scene
+  method, we might set the stage with an offer.
+
+  Then we're going to yield to the block.
+
+  And once that block is done, it'll come back to us in the scene, and we'll complete it.
+
+  ">
+    <div class="spotlight-pink"></div>
+    <div class="label">yield — passing the mic</div>
+    <div class="code-panel">
+      <span style="opacity: 0.3;"><span class="kw">def</span> <span class="fn">scene</span><br>
+      &nbsp;&nbsp;<span class="fn">puts</span> <span class="str">"The client wants a small change..."</span><br>
+      &nbsp;&nbsp;</span><span class="kw">yield</span><span style="opacity: 0.3;"><br>
+      &nbsp;&nbsp;<span class="fn">puts</span> <span class="str">"That took down staging, prod, AND the Keurig!"</span><br>
+      <span class="kw">end</span></span>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- SLIDE 15: The call — no output yet -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="slide fixed-top">
+    <div class="spotlight-pink"></div>
+    <div class="label">the block steps in</div>
+    <div class="code-panel">
+      <span class="fn">scene</span> { <span class="fn">puts</span> <span class="str">"Sure, I'll just move this button."</span> }
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- SLIDE 16: Method speaks first -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="slide fixed-top">
+    <div class="spotlight-pink"></div>
+    <div class="label">the block steps in</div>
+    <div class="code-panel">
+      <span class="fn">scene</span> { <span class="fn">puts</span> <span class="str">"Sure, I'll just move this button."</span> }
+    </div>
+    <div class="output-stack">
+      <div class="output-line method slide-in-left">The client wants a small change...</div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- SLIDE 17: Block gets the mic -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="slide fixed-top">
+    <div class="spotlight-pink"></div>
+    <div class="label">the block steps in</div>
+    <div class="code-panel">
+      <span class="fn">scene</span> { <span class="fn">puts</span> <span class="str">"Sure, I'll just move this button."</span> }
+    </div>
+    <div class="output-stack">
+      <div class="output-line method">The client wants a small change...</div>
+      <div class="output-line block slide-in-right" style="align-self: flex-end;">Sure, I'll just move this button.</div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- SLIDE 18: Method takes it back -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="slide fixed-top" data-notes="By the way, when you call `yield`, you are simply indicating that you want to evaluate the expression you pass in with the block.You can easily store the result, the output of what happens with yield, and use that output elsewhere in the method.
+  This means that you can also call yield itself in another method to use the result of the yield in that method.">
+    <div class="spotlight-pink"></div>
+    <div class="label">the block steps in</div>
+    <div class="code-panel">
+      <span class="fn">scene</span> { <span class="fn">puts</span> <span class="str">"Sure, I'll just move this button."</span> }
+    </div>
+    <div class="output-stack">
+      <div class="output-line method">The client wants a small change...</div>
+      <div class="output-line block" style="align-self: flex-end;">Sure, I'll just move this button.</div>
+      <div class="output-line method slide-in-left">That took down staging, prod, AND the Keurig!</div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- SLIDE 19: yield — show it again -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="slide" data-notes="This is the first technical slide. Walk through line by line. Method holds the mic, yield passes it, method takes it back.
+  Let's take a look at what this scene method is doing and how it's using the block.
+  ">
+    <div class="spotlight-pink"></div>
+    <div class="label">yield — passing the mic</div>
+    <div class="code-panel">
+      <span class="kw">def</span> <span class="fn">scene</span><br>
+      &nbsp;&nbsp;<span class="fn">puts</span> <span class="str">"The client wants a small change..."</span><br>
+      &nbsp;&nbsp;<span class="kw">yield</span><br>
+      &nbsp;&nbsp;<span class="fn">puts</span> <span class="str">"That took down staging, prod, AND the Keurig!"</span><br>
+      <span class="kw">end</span>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- SLIDE 20: yield — one block only -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="slide" data-notes="You can only pass one block at a time - trying to pass two results in a syntax error.
+
+  because blocks are anonymous pieces of code, when the method calls yield, it doesn't know what to do with more than one anonymous function.
+
+  It can't tell the yield keyword which function to tackle when, because these functions don't have a name.
+
+  Here, Ruby shows us that blocks are meant to be ephemeral (or one time use) by design,
+
+  Much like improv, it's created and used in the moment, never to be seen again!
+
+  It can't tell the yield keyword which function to tackle when, because these functions don't have a name.">
+    <div class="spotlight-pink"></div>
+    <div class="label">yield — one block only</div>
+    <div class="code-panel">
+      <span class="fn">scene</span> <span class="kw">do</span><br>
+      &nbsp;&nbsp;<span class="fn">puts</span> <span class="str">"Sure, I'll just move this button."</span><br>
+      <span class="kw">end</span> { <span class="fn">puts</span> <span class="str">"Then I'll refactor it!"</span> }<br>
+      <br>
+      <span class="cmt"># => syntax error, unexpected '{', expecting end-of-input</span>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- SLIDE 21: &block — naming your partner -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="slide" data-notes="to do this,you can use the `&` operator to name your block parameter,
+
+  what this operator will do is actually convert the block to a proc.
+
+  we'll dive into procs shortly, but it's worth calling this notation out here as you are likely to see it fairly often.
+
+   because this block is now converted to a proc, you can now call it the way you will call a proc, with the `.call` method. ">
+    <div class="spotlight-pink"></div>
+    <div class="label">&block — naming your scene partner</div>
+    <div class="code-panel">
+      <span class="kw">def</span> <span class="fn">scene</span>(<span class="op">&</span><span class="text">scene_partner</span>)<br>
+      &nbsp;&nbsp;<span class="fn">puts</span> <span class="str">"The client wants a small change..."</span><br>
+      &nbsp;&nbsp;<span class="class">scene_partner</span>.<span class="fn">call</span><br>
+      &nbsp;&nbsp;<span class="fn">puts</span> <span class="str">"That took down staging, prod, AND the Keurig!"</span><br>
+      <span class="kw">end</span>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- SLIDE 22: &block — highlight &scene_partner -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="slide" data-notes="&block captures the block as a Proc — gives it a name">
+    <div class="spotlight-pink"></div>
+    <div class="label">&block — naming your scene partner</div>
+    <div class="code-panel">
+      <span style="opacity: 0.3;"><span class="kw">def</span> <span class="fn">scene</span>(</span><span class="op">&</span><span class="text"></span>scene_partner</span><span style="opacity: 0.3;">)<br>
+      &nbsp;&nbsp;<span class="fn">puts</span> <span class="str">"The client wants a small change..."</span><br>
+      &nbsp;&nbsp;<span class="class">scene_partner</span>.<span class="fn">call</span><br>
+      &nbsp;&nbsp;<span class="fn">puts</span> <span class="str">"That took down staging, prod, AND the Keurig!"</span><br>
+      <span class="kw">end</span></span>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- SLIDE 23: &block — highlight scene_partner.call -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="slide" data-notes="And while you can pass this named block to yield, it’s more conventional to treat it as the proc it now is, by using the call method.
+
+  .call invokes the captured block
+  by the way, has to be the last argument
+  will get the very same unexpected argument error we saw before
+
+  why `yield` vs `&block` / `.call`? The latter for when you want to communicate the intention to receive a block">
+    <div class="spotlight-pink"></div>
+    <div class="label">&block — naming your scene partner</div>
+    <div class="code-panel">
+      <span style="opacity: 0.3;"><span class="kw">def</span> <span class="fn">scene</span>(<span class="op">&</span><span class="text">scene_partner</span>)<br>
+      &nbsp;&nbsp;<span class="fn">puts</span> <span class="str">"The client wants a small change..."</span><br>
+      &nbsp;&nbsp;</span><span class="text">scene_partner</span>.<span class="fn">call</span><span style="opacity: 0.3;"><br>
+      &nbsp;&nbsp;<span class="fn">puts</span> <span class="str">"That took down staging, prod, AND the Keurig!"</span><br>
+      <span class="kw">end</span></span>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- SLIDE 24: &block — group scenes -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="slide" data-notes="What if we tried to accept two blocks? Ruby won't let us - only one implicit block allowed.
+  improv game: new choice - some games and scenes are meant for only two players (common duos)">
+    <div class="spotlight-pink"></div>
+    <div class="label">&block — group scenes</div>
+    <div class="code-panel">
+      <span class="kw">def</span> <span class="fn">scene</span>(<span class="op">&</span><span class="text">scene_partner</span>, <span class="op">&</span><span class="text">scene_partner_2</span>)<br>
+      &nbsp;&nbsp;<span class="fn">puts</span> <span class="str">"The client wants a small change..."</span><br>
+      &nbsp;&nbsp;<span class="text">scene_partner</span>.<span class="fn">call</span><br>
+      &nbsp;&nbsp;<span class="text">scene_partner_2</span>.<span class="fn">call</span><br>
+      &nbsp;&nbsp;<span class="fn">puts</span> <span class="str">"That took down staging, prod, AND the Keurig!"</span><br>
+      <span class="kw">end</span>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- SLIDE 25: &block x2 — syntax error -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="slide" data-notes="Ruby enforces one mic - you can't have two block parameters. Syntax error!
+
+  While the exact error is different from before, they hint at the same underlying design: only
+one block can be passed at a time. ">
+    <div class="spotlight-pink"></div>
+    <div class="label">&block — respect the format</div>
+    <div class="code-panel">
+      <span class="kw">def</span> <span class="fn">scene</span>(<span class="op">&</span><span class="text">scene_partner</span>, <span class="op">&</span><span class="text">scene_partner_2</span>)<br>
+      &nbsp;&nbsp;...<br>
+      <span class="kw">end</span><br>
+      <br>
+      <span class="cmt"># => syntax error, unexpected ',', expecting ')'</span>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- SLIDE 26: pass the mic landing -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="slide" data-notes="So what we’ve seen about blocks is that Ruby enforces this idea: one method and one block
+  at a time.
+
+  You’ve only got one mic to pass between them. This is Ruby’s way of saying that a
+  scene works best with very clear focus.">
+    <div class="spotlight-pink"></div>
+    <div class="title-huge">
+      One method.<br>
+      One block.<br>
+      <span class="teal">One mic.</span>
+    </div>
+  </div>
+
+  <!-- SLIDE 27: Section — Accepting the Offer -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="slide" data-notes="Now we're going to talk about another key improv principle: accepting the offer, and the way
+Ruby's functions work with arity — the number of arguments they accept.">
+    <div class="spotlight-pink"></div>
+    <div class="section-icon"><svg viewBox="0 0 48 48" fill="none" stroke="#38BDF8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 24c0-8 6-16 18-16s18 8 18 16"/><path d="M12 28c2-2 5-3 8-1l4 3 4-3c3-2 6-1 8 1"/><circle cx="18" cy="20" r="2"/><circle cx="30" cy="20" r="2"/></svg></div>
+    <div class="title-large">Accepting the Offer</div>
+    <div class="subtitle">Arity and argument flexibility</div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- SLIDE 28: Improv rule: never deny the premise -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="slide" data-notes="never deny the premise">
+    <div class="spotlight-pink"></div>
+    <div class="rule-banner">
+      <div class="rule-label">Improv Truth</div>
+      <div class="rule-text">Never deny the premise.</div>
+    </div>
+    <div class="body-text" style="margin-top: 16px;">
+      Accept what your scene partner offers and<br> <span class="blue">work with it.</span>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- SLIDE 29: Block — more arguments than used -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="slide" data-notes="
+  continuing with our first scene partner, the block,
+   When a method yields arguments, blocks accept what the're given and adapt
+
+  Blocks are flexible scene partners.
+
+  if you pass more arguments than the block expects, it will simply ignore the extra arguments
+
+    the block simply ignores unpassed parameters">
+    <div class="spotlight-pink"></div>
+    <div class="label">Block — flexible with args</div>
+    <div class="code-panel">
+      <span class="kw">def</span> <span class="fn">scene</span>(offer, escalation)<br>
+      &nbsp;&nbsp;<span class="kw">yield</span>(offer, escalation)<br>
+      <span class="kw">end</span><br>
+      <br>
+      offer = <span class="str">"I'm playing pickleball"</span><br>
+      escalation = <span class="str">"heightening!"</span><br>
+      <br>
+      <span class="fn">scene</span>(offer, escalation) <span class="kw">do</span> |line|<br>
+      &nbsp;&nbsp;<span class="fn">puts</span> line<br>
+      <span class="kw">end</span><br>
+      <br>
+      <span class="cmt"># => "I'm playing pickleball"</span>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- SLIDE 30: Block — fewer arguments -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="slide" data-notes="this works the other way too,
+
+  in this example, even though the block indicates it can accept and might use 2 parameters, you can still pass it one and it will still work.
+
+  if the block receives fewer arguments than it defined, it won't complain, it will simply assign `nil` to the missing arguments
+
+  the block definition won't error, but if you were doing something with that missing argument that `nil` doesn't respond to,
+
+  you would get a `NoMethodError`, and that's on you not the block">
+    <div class="spotlight-pink"></div>
+    <div class="label">Block — flexible with args</div>
+    <div class="code-panel">
+      <span class="kw">def</span> <span class="fn">scene</span>(offer, escalation)<br>
+      &nbsp;&nbsp;<span class="kw">yield</span>(offer)<br>
+      <span class="kw">end</span><br>
+      <br>
+      offer = <span class="str">"I'm playing pickleball"</span><br>
+      escalation = <span class="str">"heightening!"</span><br>
+      <br>
+      <span class="fn">scene</span>(offer, escalation) <span class="kw">do</span> |line, punchline|<br>
+      &nbsp;&nbsp;<span class="fn">puts</span> <span class="str">"<span class="muted">#{</span><span class="arg">line</span><span class="muted">}</span> <span class="muted">#{</span><span class="arg">punchline</span><span class="muted">}</span>"</span><br>
+      <span class="kw">end</span><br>
+      <br>
+      <span class="cmt"># => "I'm playing pickleball "</span>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- SLIDE 31: Block — yield twice -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="slide" data-notes="You can call yield multiple times. Each time passes control to the block with different arguments.
+
+  this works, but notice how we're bending yield to do something it's not really designed for. If you want to pass around multiple callable things, that's where procs come in.">
+    <div class="spotlight-pink"></div>
+    <div class="label">Block — double time</div>
+    <div class="code-panel">
+      <span class="kw">def</span> <span class="fn">scene</span>(offer, escalation)<br>
+      &nbsp;&nbsp;<span class="kw">yield</span>(offer)<br>
+      &nbsp;&nbsp;<span class="kw">yield</span>(nil, escalation)<br>
+      <span class="kw">end</span><br>
+      <br>
+      offer = <span class="str">"I'm playing pickleball"</span><br>
+      escalation = <span class="str">"and the ball is made of cheese!"</span><br>
+      <br>
+      <span class="fn">scene</span>(offer, escalation) <span class="kw">do</span> |line, punchline|<br>
+      &nbsp;&nbsp;<span class="fn">puts</span> <span class="str">"<span class="muted">#{</span><span class="arg">line</span><span class="muted">}</span> <span class="muted">#{</span><span class="arg">punchline</span><span class="muted">}</span>"</span><br>
+      <span class="kw">end</span><br>
+      <br>
+      <span class="cmt"># => "I'm playing pickleball"</span><br>
+      <span class="cmt"># => "and the ball is made of cheese!"</span>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- SLIDE 32: Proc vs Lambda — side by side -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="slide" data-notes="good segue to bring out our other two players: procs and lambdas
+
+  The way I think about procs is that they're the loose improviser.
+
+They tend to be a little
+looser with how they play, which can be fun but can also run us into trouble.
+
+This works really well in say long form improv, which has more space and room to evolve, and can feel more fluid.
+
+The lambda, on the other hand, is more of a by-the-book player. It wants to play to the structure, which
+makes it a little more predictable.
+
+This is much how game improv feels, improv games are highly structured beats with very specific rules. ">
+    <div class="spotlight-pink"></div>
+    <div class="contrast-row">
+      <div class="contrast-col">
+        <div style="font-size: 80px; font-weight: 800; color: var(--text); margin-bottom: 24px;">Proc</div>
+        <div class="contrast-value blue" style="font-size: 50px;">The Loose<br>Improviser</div>
+      </div>
+      <div class="divider-v"></div>
+      <div class="contrast-col">
+        <div style="font-size: 80px; font-weight: 800; color: var(--text); margin-bottom: 24px;">Lambda</div>
+        <div class="contrast-value lavender" style="font-size: 50px;">The By-the-Book<br>Player</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- SLIDE 33: Arity — Proc -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="slide" data-notes="For starters, a proc is an object that encapsulates a block.
+  It can be defined, as we see here, as an instantiation of the PROC class.
+  You can also directly use an instantiated version with the Kernel method `proc`, which is a shorthand for Proc.new.
+  Since ruby 1.9, they are COMPLETELY interchangeable, and the
+  current ruby convention is to prefer the `proc` method over `Proc.new`, because it is shorter and simpler.
+  Procs, like blocks, don't care about the numnber of arguments, it will assign nil to any missing arguments.
+  while, we saw a couple of contrived examples with simple puts examples, Blocks can certainly handle increased complexity.
+  They can take arguments by denoting essentially placeholder variable names.
+  This was probably one of the areas I've gotten most tripped up on: to remind myself that the variable name, which is placed between the pipes in a block, is simply a stand-in for an argument a block can receive.
+  What's more interesting than that is that blocks are actually quite flexible when it comes to handling incoming arguments.
+  For example, even if you pass a block that indicates it will only work with one argument, you can still pass it more than one and it won't complain.
+  You might get an error if you pass it fewer arguments, but that has more to do with the use of that variable in the expression you pass in the block and less to do with the block itself.
+
+  Passing behavior rather than data
+  ada is printed, Grace is quietly ignored">
+    <div class="spotlight-pink"></div>
+    <div class="label">Proc — fast and loose</div>
+    <div class="code-panel">
+      loose = <span class="kw">Proc</span>.<span class="fn">new</span> <span class="muted">{</span> |a, b| <span class="fn">puts</span> <span class="str">"<span class="muted">#{</span><span class="arg">a</span><span class="muted">}</span> and <span class="muted">#{</span><span class="arg">b</span><span class="muted">}</span>"</span> <span class="muted">}</span><br>
+      <br>
+      loose.<span class="fn">call</span>(<span class="str">"yes"</span>)<br>
+      <br>
+      <span class="cmt"># => "yes and "</span><br>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- SLIDE 34: Arity — Lambda -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="slide" data-notes="lambda, is actually a type of proc
+  a lambda is a proc with a flag, e.g., can only play short-form
+  (instance of proc class), but it behaves more like methods, they are strict with their arguments and will complain if you deviate from the structure
+  Lambda insists on the right number of arguments
+  lamdas are different from methods though, as they have access to the variables whithin the scope they are defined
+  Think of it this way: a def builds a wall around itself — nothing from outside gets in except arguments. A lambda is more like a bubble — it floats away from where it was born but carries its surroundings with it.
+This is exactly why lambdas (and procs and blocks) are so useful in Ruby. Patterns like callbacks, iterators examples  all depend on this closure behavior.">
+    <div class="spotlight-pink"></div>
+    <div class="label">Lambda — keeps to the structure</div>
+    <div class="code-panel">
+      strict = <span class="op">-></span>(a, b) { <span class="fn">puts</span> <span class="str">"<span class="muted">#{</span><span class="arg">a</span><span class="muted">}</span> and <span class="muted">#{</span><span class="arg">b</span><span class="muted">}</span>"</span> <span class="muted">}</span><br>
+      <br>
+      strict.<span class="fn">call</span>(<span class="str">"yes"</span>)<br>
+      <br>
+      <span class="cmt"># ArgumentError</span><br>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- SLIDE 35: Why not just a method? -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="slide" data-notes="So you might be wondering — why not just use a method? Here's the thing: with a method, you have to pass everything in every time. The method has no memory. Every call starts from scratch.
+
+  # wait, who am I again?">
+    <div class="spotlight-pink"></div>
+    <div class="label">Why not just a method?</div>
+    <div class="code-panel">
+      <span class="kw">def</span> <span class="fn">perform</span>(character, scene)<br>
+      &nbsp;&nbsp;<span class="str">"<span class="muted">#{</span><span class="arg">character</span><span class="muted">}</span> enters the <span class="muted">#{</span><span class="arg">scene</span><span class="muted">}</span> and stays in character"</span><br>
+      <span class="kw">end</span><br>
+      <br>
+      <span class="cmt"># Every single time:</span><br>
+      <span class="fn">perform</span>(<span class="str">"The Man in Black"</span>, <span class="str">"Fire Swamp"</span>)<br>
+      <span class="fn">perform</span>(<span class="str">"The Man in Black"</span>, <span class="str">"Pit of Dispair"</span>)<br>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- SLIDE 35: Lambda definition -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="slide" data-notes="But a lambda? It remembers where it came from.
+
+  It captures the character when it's created, and carries that context with it everywhere it goes. This is closure — the lambda holds onto its surroundings.
+
+  Being able to capture local state and pass it around with a chunk of code is something you cant do with methods.
+
+  Closures capture local variables, which methods do not">
+    <div class="spotlight-pink"></div>
+    <div class="label">Lambda — remembers its character</div>
+    <div class="code-panel">
+      <span class="kw">def</span> <span class="fn">create_performer</span>(character)<br>
+      &nbsp;&nbsp;<span class="op">-></span>(scene) { <span class="str">"<span class="muted">#{</span><span class="arg">character</span><span class="muted">}</span> enters the <span class="muted">#{</span><span class="arg">scene</span><span class="muted">}</span> and stays in character"</span> }<br>
+      <span class="kw">end</span>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- SLIDE 36: Lambda in action -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="slide" data-notes="You create a performer once, and they stay in character no matter what scene you throw at them.
+  another option to invite audience participation">
+    <div class="spotlight-pink"></div>
+    <div class="label">Lambda — remembers its character</div>
+    <div class="code-panel">
+      pirate = <span class="fn">create_performer</span>(<span class="str">"The Man in Black"</span>)<br>
+      <br>
+      <br>
+      pirate.<span class="fn">call</span>(<span class="str">"Fire Swamp"</span>)<br>
+      <span class="cmt"># => "The Man in Black enters the Fire Swamp..."</span>
+      <br>
+      pirate.<span class="fn">call</span>(<span class="str">"Pit of Dispair"</span>)<br>
+      <span class="cmt"># => "The Man in Black enters the Pit of Dispair..."</span>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- SLIDE 37: Section — When It Gets Weird -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="slide" data-notes="">
+    <div class="spotlight-pink"></div>
+    <div class="section-icon"><svg viewBox="0 0 48 48" fill="none" stroke="var(--pink)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="28 4 12 26 24 26 20 44 36 22 24 22 28 4"/></svg></div>
+    <div class="title-large">When It Gets <span class="pink">Weird</span></div>
+    <div class="subtitle">Control flow + lexical scope</div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- SLIDE 38: Improv rule -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="slide" data-notes="">
+    <div class="spotlight-pink"></div>
+    <div class="rule-banner">
+      <div class="rule-label">Improv Truth</div>
+      <div class="rule-text">Sometimes someone sweeps the scene.</div>
+    </div>
+    <div class="body-text" style="margin-top: 16px;">
+      The lights go down, whether you were<br> <span class="pink">ready or not.</span>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- SLIDE 39: return in a Lambda — method definition -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="slide" data-notes="Lambda steps offstage. The scene CONTINUES.">
+    <div class="spotlight-pink"></div>
+    <div class="label">Lambda — with return</div>
+    <div class="code-panel">
+      <span class="kw">def</span> <span class="fn">scene</span><br>
+      &nbsp;&nbsp;<span class="fn">puts</span> <span class="str">"That is the last time I let you drive."</span><br>
+      &nbsp;&nbsp;player = <span class="op">-></span> { <span class="kw">return</span> <span class="fn">puts</span> <span class="str">"I followed the map exactly!"</span> }<br>
+      &nbsp;&nbsp;player.<span class="fn">call</span><br>
+      &nbsp;&nbsp;<span class="fn">puts</span> <span class="str">"That map is from 1954!"</span><br>
+      <span class="kw">end</span>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- SLIDE 40: Lambda — method speaks first -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="slide fixed-top">
+    <div class="spotlight-pink"></div>
+    <div class="label">Lambda — listens and accepts</div>
+    <div class="code-panel">
+      <span class="fn">scene</span>
+    </div>
+    <div class="output-stack">
+      <div class="output-line method slide-in-left">That is the last time I let you drive.</div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- SLIDE 41: Lambda — lambda exits silently -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="slide fixed-top">
+    <div class="spotlight-pink"></div>
+    <div class="label">Lambda — responds and exits gracefully</div>
+    <div class="code-panel">
+      <span class="fn">scene</span>
+    </div>
+    <div class="output-stack">
+      <div class="output-line method">That is the last time I let you drive.</div>
+      <div class="output-line block slide-in-right" style="align-self: flex-end; opacity: 0.4;">I followed the map exactly!</div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- SLIDE 42: Lambda — scene continues! -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="slide fixed-top" data-notes="The lambda returned, but the method kept going. That's the difference.">
+    <div class="spotlight-pink"></div>
+    <div class="label">Lambda — scene continues</div>
+    <div class="code-panel">
+      <span class="fn">scene</span>
+    </div>
+    <div class="output-stack">
+      <div class="output-line method">That is the last time I let you drive.</div>
+      <div class="output-line block" style="align-self: flex-end;">I followed the map exactly!</div>
+      <div class="output-line method slide-in-left">That map is from 1954!</div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- SLIDE 43: return in a Proc — method definition -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="slide" data-notes="while procs can be loose, and that can really work and improve a scene,
+  sometimes procs can get carried away and end up totally killing the scene.
+  The Proc sweeps the scene. Everyone goes home.
+
+  While procs can play looser and that flexibility can really benefit a code, or scene,
+sometimes they can get carreid away, and when they do, they kill the whole scene.">
+    <div class="spotlight-pink"></div>
+    <div class="label">Proc — with return</div>
+    <div class="code-panel">
+      <span class="kw">def</span> <span class="fn">scene</span><br>
+      &nbsp;&nbsp;<span class="fn">puts</span> <span class="str">"That is the last time I let you drive."</span><br>
+      &nbsp;&nbsp;player = <span class="fn">proc</span> { <span class="kw">return</span> <span class="fn">puts</span> <span class="str">"I followed the map exactly!"</span> }<br>
+      &nbsp;&nbsp;player.<span class="fn">call</span><br>
+      &nbsp;&nbsp;<span class="fn">puts</span> <span class="str">"That map is from 1954!"</span><br>
+      <span class="kw">end</span>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- SLIDE 44: Proc — method speaks first -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="slide fixed-top">
+    <div class="spotlight-pink"></div>
+    <div class="label">Proc — listens and accepts</div>
+    <div class="code-panel">
+      <span class="fn">scene</span>
+    </div>
+    <div class="output-stack">
+      <div class="output-line method slide-in-left">That is the last time I let you drive.</div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- SLIDE 45: Proc — proc speaks and sweeps -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="slide fixed-top">
+    <div class="spotlight-pink"></div>
+    <div class="label">Proc — responds...</div>
+    <div class="code-panel">
+      <span class="fn">scene</span>
+    </div>
+    <div class="output-stack">
+      <div class="output-line method">That is the last time I let you drive.</div>
+      <div class="output-line block slide-in-right" style="align-self: flex-end;">I followed the map exactly!</div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- SLIDE 46: Proc — scene swept! -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="slide fixed-top" data-notes="The Proc's return exits the ENTIRE method. Scene over.">
+    <div class="spotlight-pink"></div>
+    <div class="label">Proc — and ends the scene</div>
+    <div class="code-panel">
+      <span class="fn">scene</span>
+    </div>
+    <div class="output-stack">
+      <div class="output-line method">That is the last time I let you drive.</div>
+      <div class="output-line block" style="align-self: flex-end;">I followed the map exactly!</div>
+      <div class="output-line method slide-in-left" style="opacity: 0.4; color: var(--muted); background: rgba(255,255,255,0.02); border-left-color: var(--muted);">nil</div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- SLIDE 47: Proc defined outside — code setup -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="slide" data-notes="But what happens if the Proc is defined OUTSIDE the method? There's no enclosing method to return from.">
+    <div class="spotlight-pink"></div>
+    <div class="label">Proc — but wait...</div>
+    <div class="code-panel">
+      player = <span class="fn">proc</span> { <span class="kw">return</span> <span class="fn">puts</span> <span class="str">"I followed the map exactly!"</span> }<br>
+      <br>
+      <span class="kw">def</span> <span class="fn">scene</span>(actor)<br>
+      &nbsp;&nbsp;<span class="fn">puts</span> <span class="str">"That is the last time I let you drive."</span><br>
+      &nbsp;&nbsp;actor.<span class="fn">call</span><br>
+      &nbsp;&nbsp;<span class="fn">puts</span> <span class="str">"That map is from 1954!"</span><br>
+      <span class="kw">end</span>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- SLIDE 48: Proc defined outside — the call -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="slide fixed-top">
+    <div class="spotlight-pink"></div>
+    <div class="label">Proc — defined outside</div>
+    <div class="code-panel">
+      <span class="fn">scene</span>(player)
+    </div>
+    <div class="output-stack">
+      <div class="output-line method slide-in-left">That is the last time I let you drive.</div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- SLIDE 49: Proc defined outside — proc tries to return -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="slide fixed-top">
+    <div class="spotlight-pink"></div>
+    <div class="label">Proc — tries to sweep...</div>
+    <div class="code-panel">
+      <span class="fn">scene</span>(player)
+    </div>
+    <div class="output-stack">
+      <div class="output-line method">That is the last time I let you drive.</div>
+      <div class="output-line block slide-in-right" style="align-self: flex-end;">I followed the map exactly!</div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- SLIDE 50: Proc defined outside — LocalJumpError! -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="slide fixed-top" data-notes="The Proc tries to sweep a scene that doesn't exist. There's no enclosing method to return from — LocalJumpError!">
+    <div class="spotlight-pink"></div>
+    <div class="label">Proc — nowhere to go</div>
+    <div class="code-panel">
+      <span class="fn">scene</span>(player)
+    </div>
+    <div class="output-stack">
+      <div class="output-line method">That is the last time I let you drive.</div>
+      <div class="output-line block" style="align-self: flex-end;">I followed the map exactly!</div>
+      <div class="output-line slide-in-left" style="background: rgba(255, 80, 80, 0.15); border-left: 4px solid #ff5050; color: #ff5050;">LocalJumpError: unexpected return</div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- SLIDE 51: The punchline-->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="slide" data-notes=" A proc can run off stage and end the whole scene. A lambda knows its mark.
+  Lambdas exit gracefully., Procs take everyone with them.
+  lambda: I'm done, and the scene continues
+  proc: We're done, and the scene ends
+  ">
+    <div class="spotlight-pink"></div>
+    <div class="title-large" style="max-width: 800px;">
+      Lambda: <span class="lavender">"I'm done."</span><br><br>
+      Proc: <span class="blue">"We're done."</span>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- SLIDE 52: Section — The callback -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="slide" data-notes="">
+    <div class="spotlight-pink"></div>
+    <div class="section-icon"><svg viewBox="0 0 48 48" fill="none" stroke="var(--lavender)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M24 42S4 28 4 16a10 10 0 0 1 20-2 10 10 0 0 1 20 2c0 12-20 26-20 26z"/></svg></div>
+    <div class="title-large">The Callback</div>
+  </div>
+
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- SLIDE 53: summary -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="slide" data-notes="think of ruby as your scene partner
+
+  ruby REWARDS the improv mindset">
+    <div class="spotlight-pink"></div>
+    <div class="point-list">
+      <div class="point">
+        <div class="bullet teal-bullet"></div>
+        <div>Hold focus, then pass it off → <span class="teal">share the stage</span></div>
+      </div>
+      <div class="point">
+        <div class="bullet lavender-bullet"></div>
+        <div>Build on what's given → <span class="blue">accept and adapt</span></div>
+      </div>
+      <div class="point">
+        <div class="bullet pink-bullet"></div>
+        <div>Return with intention → <span class="pink">know your exit</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- SLIDE 54: Closing — Yes, And… (final callback) -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="slide" data-notes="Ruby doesn't just run your code, it listens, accepts the offer, and says 'Yes, and...'">
+    <div class="spotlight-pink"></div>
+    <div class="yes-and-text">Yes, and…</div>
+  </div>
+
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- SLIDE 55: And scene! -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="slide slide-merge-spotlight" data-notes="thank you for coming,
+  tickets are $5 at the door">
+    <div class="spotlight-pink"></div>
+    <div class="title-huge">
+      And <span class="lavender">scene</span>
+    </div>
+  </div>
+</div>
+
+<script src="scripts.js"></script>
+
+</body>
+</html>

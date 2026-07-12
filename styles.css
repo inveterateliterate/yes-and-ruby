@@ -1,0 +1,599 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --bg: #0F172A;
+  --bg-subtle: #111827;
+  --text: #E5E7EB;
+  --muted: #B0BEC5;
+  --teal: #14B8A6;
+  --lavender: #A78BFA;
+  --pink: #FF69B4;
+  --light-blue: #38BDF8;
+  --code-bg: rgba(255,255,255,0.04);
+  --code-border: rgba(255,255,255,0.08);
+  --slide-w: 1920px;
+  --slide-h: 1080px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+  background: #000;
+  color: var(--text);
+  font-family: 'Outfit', sans-serif;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* ── Slide container ──
+   Fixed 1920×1080 (16:9, 1080p) stage, centered in the viewport and scaled
+   uniformly to fit. Aspect ratio is always preserved; any leftover space is
+   black letterbox/pillarbox — never a distorted or 4:3 slide. */
+.deck {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: var(--slide-w);
+  height: var(--slide-h);
+  transform: translate(-50%, -50%) scale(calc(min(100vw / var(--slide-w), 100vh / var(--slide-h))));
+  transform-origin: center center;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 120px 150px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+  overflow: hidden;
+}
+
+.slide.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ── Dual spotlights / stage glow ── */
+.slide::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  left: -5%;
+  width: 1050px;
+  height: 950px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(20, 184, 166, 0.28) 0%, rgba(20, 184, 166, 0.12) 40%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.slide .spotlight-pink {
+  position: absolute;
+  top: -35%;
+  right: -5%;
+  width: 950px;
+  height: 875px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(255, 105, 180, 0.24) 0%, rgba(255, 105, 180, 0.10) 40%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.slide > * { position: relative; z-index: 1; }
+
+/* ── No spotlight option ── */
+.slide.no-spotlight::before {
+  display: none;
+}
+
+/* ── Footer gradient line ── */
+.slide::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--teal), var(--lavender), var(--pink));
+  opacity: 0.5;
+  z-index: 1;
+}
+
+/* ── Typography ── */
+.title-huge {
+  font-size: 148px;
+  font-weight: 800;
+  letter-spacing: -3px;
+  line-height: 1.05;
+  text-align: center;
+}
+
+.title-large {
+  font-size: 110px;
+  font-weight: 700;
+  letter-spacing: -2px;
+  line-height: 1.15;
+  text-align: center;
+}
+
+.title-med {
+  font-size: 86px;
+  font-weight: 700;
+  letter-spacing: -1.5px;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 50px;
+  font-weight: 400;
+  color: var(--muted);
+  text-align: center;
+  margin-top: 24px;
+}
+
+.body-text {
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 1.6;
+  text-align: center;
+  max-width: 1200px;
+}
+
+.label {
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 30px;
+}
+
+/* ── Accent colors ── */
+.teal { color: var(--teal); }
+.lavender { color: var(--lavender); }
+.pink { color: var(--pink); }
+.blue { color: var(--light-blue); }
+.muted { color: var(--muted); }
+
+/* ── Code blocks ── */
+.code-panel {
+  background: var(--code-bg);
+  border: 1px solid var(--code-border);
+  border-radius: 18px;
+  padding: 42px 54px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 32px;
+  line-height: 1.45;
+  word-spacing: -0.15em;
+  text-align: left;
+  width: 100%;
+  max-width: 1220px;
+  backdrop-filter: blur(8px);
+  font-variant-ligatures: none;
+}
+
+.code-panel .fn { color: var(--lavender); }
+.code-panel .kw { color: var(--teal); }
+.code-panel .op { color: var(--pink); }
+.code-panel .gray { color: var(--muted); }
+.code-panel .str { color: var(--light-blue); }
+.code-panel .cmt { color: var(--muted); font-style: italic; }
+.code-panel .num { color: var(--pink); }
+.code-panel .arg { color: var(--text); }
+
+/* ── Contrast / comparison layout ── */
+.contrast-row {
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  max-width: 1100px;
+}
+
+.contrast-col {
+  flex: 1;
+  text-align: center;
+}
+
+.contrast-col .contrast-label {
+  font-size: 35px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+
+.contrast-col .contrast-value {
+  font-size: 93px;
+  font-weight: 700;
+  letter-spacing: -1.5px;
+}
+
+.contrast-col .contrast-desc {
+  font-size: 44px;
+  color: var(--muted);
+  margin-top: 18px;
+  line-height: 1.5;
+}
+
+.divider-v {
+  width: 1px;
+  height: 240px;
+  background: linear-gradient(180deg, transparent, var(--muted), transparent);
+  opacity: 0.3;
+  flex-shrink: 0;
+}
+
+/* ── Section header style ── */
+.section-icon {
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+.section-icon svg {
+  width: 72px;
+  height: 72px;
+}
+
+/* ── Improv rule banner ── */
+.rule-banner {
+  background: linear-gradient(135deg, rgba(20,184,166,0.1), rgba(167,139,250,0.1));
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 24px;
+  padding: 36px 72px;
+  margin-bottom: 48px;
+  text-align: center;
+}
+
+.rule-banner .rule-label {
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.rule-banner .rule-text {
+  font-size: 48px;
+  font-weight: 600;
+}
+
+/* ── Progress bar ── */
+.progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--teal), var(--lavender));
+  transition: width 0.4s ease;
+  z-index: 100;
+}
+
+/* ── Slide number ── */
+.slide-num {
+  position: fixed;
+  bottom: 20px;
+  right: 28px;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--muted);
+  opacity: 0.5;
+  z-index: 100;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* ── List style ── */
+.point-list {
+  text-align: left;
+  max-width: 1050px;
+  width: 100%;
+}
+
+.point-list .point {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  margin-bottom: 30px;
+  font-size: 40px;
+  line-height: 1.5;
+}
+
+.point .bullet {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-top: 21px;
+  box-shadow: 0 0 12px 3px currentColor, 0 0 30px 6px currentColor;
+  position: relative;
+}
+
+.point .bullet::before {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  background: radial-gradient(circle, transparent 40%, currentColor 100%);
+  opacity: 0.15;
+}
+
+.point .bullet::after {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  border-radius: 50%;
+  background: currentColor;
+  filter: brightness(1.4);
+}
+
+.point .bullet.teal-bullet {
+  background: rgba(20, 184, 166, 0.4);
+  color: var(--teal);
+  box-shadow: 0 0 8px 2px rgba(20,184,166,0.4), 0 0 24px 6px rgba(20,184,166,0.15);
+}
+.point .bullet.teal-bullet::after { background: var(--teal); }
+
+.point .bullet.lavender-bullet {
+  background: rgba(56, 189, 248, 0.4);
+  color: var(--light-blue);
+  box-shadow: 0 0 8px 2px rgba(56,189,248,0.4), 0 0 24px 6px rgba(56,189,248,0.15);
+}
+.point .bullet.lavender-bullet::after { background: var(--light-blue); }
+
+.point .bullet.pink-bullet {
+  background: rgba(255, 105, 180, 0.4);
+  color: var(--pink);
+  box-shadow: 0 0 8px 2px rgba(255,105,180,0.4), 0 0 24px 6px rgba(255,105,180,0.15);
+}
+.point .bullet.pink-bullet::after { background: var(--pink); }
+
+/* ── Yes-And signature slide ── */
+.yes-and-text {
+  font-size: 188px;
+  font-weight: 800;
+  letter-spacing: -4px;
+  color: var(--pink);
+  text-align: center;
+}
+
+/* ── Annotation / pointer ── */
+.annotation {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 39px;
+  color: var(--pink);
+  text-align: center;
+  margin-top: 18px;
+}
+
+/* Scaling is handled globally by the .deck stage transform above, so the
+   1920×1080 design renders identically (just scaled) on every display —
+   no per-breakpoint font overrides needed. */
+
+/* ── Slide-in animations for "passing the mic" ── */
+@keyframes slideFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slide.active .slide-in-left {
+  animation: slideFromLeft 0.5s ease-out forwards;
+}
+
+.slide.active .slide-in-right {
+  animation: slideFromRight 0.5s ease-out forwards;
+}
+
+/* Output line styling for the animated sequence */
+.output-line {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 36px;
+  padding: 12px 24px;
+  border-radius: 10px;
+  margin-top: 20px;
+  display: inline-block;
+}
+
+.output-line.method {
+  background: rgba(255, 105, 180, 0.05);
+  border-left: 4px solid var(--pink);
+  color: var(--pink);
+  max-width: 75%;
+}
+
+.output-line.block {
+  background: rgba(20, 184, 166, 0.05);
+  border-left: 4px solid var(--teal);
+  color: var(--teal);
+}
+
+.output-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 32px;
+  width: 100%;
+  max-width: 1170px;
+}
+
+/* Fixed-top layout for animated code sequences */
+.slide.fixed-top {
+  justify-content: flex-start;
+  padding-top: 210px;
+}
+
+/* Hidden text that still takes up space */
+.hidden-line {
+  visibility: hidden;
+}
+
+/* ── Help overlay ── */
+.help-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.help-overlay.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.help-content {
+  background: var(--bg);
+  border: 1px solid var(--code-border);
+  border-radius: 16px;
+  padding: 40px 60px;
+  max-width: 500px;
+}
+
+.help-content h2 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: var(--text);
+}
+
+.help-content .shortcut {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--code-border);
+}
+
+.help-content .shortcut:last-child {
+  border-bottom: none;
+}
+
+.help-content .key {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 18px;
+  background: var(--code-bg);
+  border: 1px solid var(--code-border);
+  border-radius: 6px;
+  padding: 4px 10px;
+  color: var(--teal);
+}
+
+.help-content .action {
+  font-size: 21px;
+  color: var(--muted);
+}
+
+.help-close {
+  margin-top: 24px;
+  text-align: center;
+  font-size: 18px;
+  color: var(--muted);
+}
+
+/* ── Title slide: single centered green spotlight at top ── */
+.slide.slide-title::before {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.slide.slide-title .spotlight-pink {
+  display: none;
+}
+
+/* ── Slide 2: spotlights split from center ── */
+@keyframes spotlightSplitLeft {
+  from {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  to {
+    left: -5%;
+    transform: translateX(0);
+  }
+}
+
+@keyframes spotlightSplitRight {
+  from {
+    right: 50%;
+    transform: translateX(50%);
+  }
+  to {
+    right: -5%;
+    transform: translateX(0);
+  }
+}
+
+.slide.slide-split-spotlight.active::before {
+  animation: spotlightSplitLeft 0.8s ease-out both;
+}
+
+.slide.slide-split-spotlight.active .spotlight-pink {
+  animation: spotlightSplitRight 0.8s ease-out both;
+}
+
+/* ── Final slide: spotlights merge back to center ── */
+@keyframes spotlightMergeLeft {
+  from {
+    left: -5%;
+    transform: translateX(0);
+  }
+  to {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes spotlightMergeFadeRight {
+  from {
+    right: -5%;
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    right: 50%;
+    transform: translateX(50%);
+    opacity: 0;
+  }
+}
+
+.slide.slide-merge-spotlight.active::before {
+  animation: spotlightMergeLeft 0.8s ease-out both;
+}
+
+.slide.slide-merge-spotlight.active .spotlight-pink {
+  animation: spotlightMergeFadeRight 0.8s ease-out both;
+}
